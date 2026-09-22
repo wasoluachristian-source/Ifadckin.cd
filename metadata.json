@@ -1,0 +1,6 @@
+{
+  "name": "IFADC Kinshasa - Application Mobile & Web",
+  "description": "Application Mobile & Web officielle de l'Institut Facultaire des Assemblées de Dieu du Congo (IFADC Kinshasa): installation PWA autonome sur Android et iOS, inscriptions L1 2026-2027, suivi de dossier, espaces rôles dédiés (Professeurs, Doyens, Recteur, Scolarité) avec circuit de délibération des notes LMD, espace étudiant, relevés de notes et administration centrale.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,117 @@
+{
+  "entities": {
+    "Config": {
+      "title": "Institute Configuration",
+      "description": "General settings, contact info, motto, and logo for IFADC",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "shortName": { "type": "string" },
+        "tutelle": { "type": "string" },
+        "motto": { "type": "string" },
+        "address": { "type": "string" },
+        "reference": { "type": "string" },
+        "commune": { "type": "string" },
+        "city": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "academicYear": { "type": "string" },
+        "l1TuitionAmount": { "type": "number" },
+        "currency": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "websiteUrl": { "type": "string" }
+      }
+    },
+    "Faculty": {
+      "title": "Faculty & Dean",
+      "description": "Faculty details, Dean profile with photo and message, departments, and specific contacts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "coverImage": { "type": "string" },
+        "description": { "type": "string" },
+        "dean": { "type": "object" },
+        "options": { "type": "array" },
+        "contactEmail": { "type": "string" },
+        "contactPhone": { "type": "string" }
+      }
+    },
+    "Announcement": {
+      "title": "News & Announcements",
+      "description": "Official announcements, press releases, with image illustrations and downloadable documents",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "content": { "type": "string" },
+        "summary": { "type": "string" },
+        "publishedAt": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "attachmentUrl": { "type": "string" },
+        "attachmentName": { "type": "string" },
+        "facultyId": { "type": "string" }
+      }
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Student record with grades, matricule, and tuition status",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "matricule": { "type": "string" },
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "facultyName": { "type": "string" },
+        "optionName": { "type": "string" },
+        "level": { "type": "string" },
+        "grades": { "type": "array" }
+      }
+    },
+    "Application": {
+      "title": "Registration Application",
+      "description": "Candidate application for admission",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "dossierNumber": { "type": "string" },
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "AdminDocument": {
+      "title": "Admin Document",
+      "description": "Official institute downloadable documents",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "fileName": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "config/institute_config": {
+      "entity": "Config"
+    },
+    "faculties/{docId}": {
+      "entity": "Faculty"
+    },
+    "announcements/{announcementId}": {
+      "entity": "Announcement"
+    },
+    "students/{studentId}": {
+      "entity": "Student"
+    },
+    "applications/{appId}": {
+      "entity": "Application"
+    },
+    "documents/{docId}": {
+      "entity": "AdminDocument"
+    }
+  }
+}

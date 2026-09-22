@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public read for institute config, write permitted for admin & updates
+    match /config/{docId} {
+      allow read, write: if true;
+    }
+    // Faculties catalog
+    match /faculties/{docId} {
+      allow read, write: if true;
+    }
+    // Announcements & News articles
+    match /announcements/{announcementId} {
+      allow read, write: if true;
+    }
+    // Students records and grades
+    match /students/{studentId} {
+      allow read, write: if true;
+    }
+    // Admission registration applications
+    match /applications/{appId} {
+      allow read, write: if true;
+    }
+    // Administrative downloadable documents
+    match /documents/{docId} {
+      allow read, write: if true;
+    }
+    // Admin password & institute system settings
+    match /settings/{docId} {
+      allow read, write: if true;
+    }
+  }
+}
